@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content='width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, shrink-to-fit=yes'>
-    <title>Yilan International Children's Folklore _ Folkgames Festival</title>
+    <title>Yilan International Children's Folklore & Folkgames Festival</title>
     <link rel="stylesheet" href="TemplateData/style.css">
     <style>
         html{
@@ -50,7 +50,7 @@
     <canvas id="video-canvas" style="width:100%; height:100%; object-fit:cover; position:absolute"></canvas>
     <div id="startARDiv" class="ctaDiv">
         <select id="chooseCamSel" style="display: none;" onchange="SelectCam()"></select>
-        <p style="text-align: center; width:60vw;">This augmented reality experience requires access to your device's camera</p>
+        <p style="text-align: center; width:60vw;">AR體驗需要存取您裝置的相機，直接點擊「允許訪問」即可體驗內容</p>
         <button id="startARButton" onclick="StartAR()" style="display:none">ALLOW ACCESS</button>
     </div>
     <div id="screenshotDiv" style="display: none;" class="ctaDiv">
@@ -96,7 +96,7 @@
                 }
                 catch{
                     console.error("Failed to initialize ImageTracker. Are you missing opencv.js? " + error);
-                    ShowError("Failed to initialize the experience.");
+                    ShowError("無法初始化體驗，建議重新加載頁面");
                     return;
                 }
                 
@@ -154,7 +154,7 @@
                 catch (err) {
                     //user denied camera permission - show error panel
                     console.error("getUserMedia error - " , err);
-                    ShowError("Failed to start the experience. Camera permission was denied");
+                    ShowError("裝置鏡頭權限被拒絕，無法進行體驗");
                     window.requestingForPermissions = false;
                 }           
             }
